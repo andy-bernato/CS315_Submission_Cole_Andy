@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(17, 94, 94);
+}
+
+a:active {
+    color:indianred;
+}
+
+a:hover {
+    background-color: rgb(214, 22, 198);
+    color: white;
+}
+
+ul li:nth-child(even)>a {
+    background: coral;
+}
+
+ul li:nth-child(odd)>a {
+    background: rgb(40, 217, 220);
+}
+
+div p:first-of-type:first-letter {
+    font-size: 40px;
+    color: greenyellow;
+}
+
+div p:first-of-type::first-line {
+    font-style: italic;
+}
+
+h3+ul {
+    color:gold;
+}
