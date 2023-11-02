@@ -34,10 +34,14 @@
                 <option>A</option>
             </select>
         </p>
-        <input type="submit" onclick="randomWebsite()"/>
+        <input type="submit" onClick="randomWebsite()"/>
         <script>
             function randomWebsite() {
-                
+                const ourWebsites = ["../andytop10thing/tenbestthing.html"]
+                let randomIndex = Math.floor(Math.random() * ourWebsites.length);
+                // something like this, might have the wrong relative path
+                // TODO: fix this
+                window.location.href = "../andytop10thing/tenbestthing.html"
             }
         </script>
     </fieldset>
