@@ -4,13 +4,15 @@
     <link rel="stylesheet" href="rap.css">
 </head>
 
-<button type="button" onclick="playRap();">
+<button type="button" id="starter" onclick="playRap();">
     Click Me! (please) (volume on) (seriously) (we put a lot of effort into this) (I mean it)
 </button>
 <script>
     function playRap() {
         var andyRap = new Audio('New Recording 7.mp3');
         var target = document.getElementById('rapText');
+        const element = document.getElementById("starter");
+        element.remove();
         target.style.opacity = 1;
         andyRap.play();
     }
