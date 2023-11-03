@@ -1,49 +1,42 @@
 <!DOCTYPE html>
-
-<form method="post">
-    <fieldset>
-        <legend> Totally Secure user data input </legend>
-        <p>
-            <label>Name</label>
-            <input type="text" name="Name" />
-        </p>
-        <p>
-            <label for="email">Enter your email:</label>
-            <input type="email" id="email" name="Email">
-        </p>
-        <p>
-            <label for="email">Enter someone else's email:</label>
-            <input type="email" id="otheremail" name="Email">
-        </p>
-        <p>
-            <label>How joitled are you right now:</label>
-            non-joitled (Sad)
-            <input type="range" min="0" max="10000" step="10" name="Is you joitled?"/>
-            Joitled! (happy)
-        </p>
-        <p>
-            <label>Wat grade are you going to give us:</label>
-            <select name="Grade">
-                <option>Select a Grade</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-            </select>
-        </p>
-        <input type="submit" onClick="randomWebsite()"/>
-        <script>
-            function randomWebsite() {
-                const ourWebsites = ["../andytop10thing/tenbestthing.html"]
-                let randomIndex = Math.floor(Math.random() * ourWebsites.length);
-                // something like this, might have the wrong relative path
-                // TODO: fix this
-                window.location.href = "../andytop10thing/tenbestthing.html"
-            }
-        </script>
-    </fieldset>
-</form>
 <html lang="en">
+<link rel="stylesheet" href="form.css">
+<body id="formbody">
+    <form method="post" id="jsonInput">
+        <fieldset>
+            <legend> Totally Secure user data input </legend>
+            <p>
+                <label>Name:</label>
+                <input type="text" id="nameID" name="Name" />
+            </p>
+            <p>
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="Email">
+            </p>
+            <p>
+                <label for="email">Enter someone else's email:</label>
+                <input type="email" id="otheremail" name="Email">
+            </p>
+            <p>
+                <label>How joitled are you right now:</label>
+                non-joitled (Sad)
+                <input type="range" id="joitledness" min="0" max="10000" step="10" name="Is you joitled?"/>
+                Joitled! (happy)
+            </p>
+            <p>
+                <label>Wat grade are you going to give us:</label>
+                <select name="Grade" id ="gradeID">
+                    <option>Select a Grade</option>
+                    <option>A</option>
+                    <option>A</option>
+                    <option>A</option>
+                    <option>A</option>
+                    <option>A</option>
+                    <option>A</option>
+                    <option>A</option>
+                </select>
+            </p>
+            <input type="submit"/>
+        </fieldset>
+    </form>
+</body>
