@@ -12,11 +12,10 @@
         <script>
             function triggerWarning() {
                 var surprise = new Audio('FlashbangSound.mp3');
-                var target = document.getElementById('rapText');
-                const element = document.getElementById("starter");
+                const element = document.getElementById("bang");
                 element.remove();
-                target.style.opacity = 1;
-                andyRap.play();
+                
+                surprise.play();
             }
         </script>
     </div>
