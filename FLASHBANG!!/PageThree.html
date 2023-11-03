@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <link rel="stylesheet" href="flashbang.css">
+</head>
 
-<button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.html';">
-    Return to Home
-</button>
+<body id="blinding">
+    <div id="buttonHolder">
+        <button type="button" id="bang" onclick="triggerWarning();">
+            Click Me!
+        </button>
+        <script>
+            function triggerWarning() {
+                var surprise = new Audio('FlashbangSound.mp3');
+                var target = document.getElementById('rapText');
+                const element = document.getElementById("starter");
+                element.remove();
+                target.style.opacity = 1;
+                andyRap.play();
+            }
+        </script>
+    </div>
+    <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.html';">
+           Return to Home
+    </button>        
+</body>
+
+
