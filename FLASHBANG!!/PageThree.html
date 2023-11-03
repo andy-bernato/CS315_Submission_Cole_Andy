@@ -14,8 +14,13 @@
                 var surprise = new Audio('FlashbangSound.mp3');
                 const element = document.getElementById("bang");
                 element.remove();
-                
+                function whiteout() {
+                var screen = document.getElementById("blinding");
+                screen.style.backgroundColor = "#FFFFFF";
+                }
                 surprise.play();
+                setTimeout(whiteout(), 20000);
+                
             }
         </script>
     </div>
