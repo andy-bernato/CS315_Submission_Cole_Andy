@@ -39,4 +39,15 @@
             <input type="submit"/>
         </fieldset>
     </form>
+
+    <script>
+        function randomPage() {
+            websiteArray = ['../andytop10thing/tenbestthing.html', '../programrap/PageSix.html']
+            arrayIndex = Math.floor(Math.random() * websiteArray.length);
+            window.location.href=websiteArray[arrayIndex]
+        }
+    </script>
+    <button type="button" id="randomPage" onclick=randomPage()>
+        Go to a WACKY random website
+    </button>
 </body>
