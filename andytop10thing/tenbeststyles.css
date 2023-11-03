@@ -12,9 +12,28 @@
 #bodyHeaderText {
     font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: yellow;
 }
 
 #methodology {
     font-size: 23px;
     color: yellow
+}
+#mainbodyText {
+    color: yellow;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 15px;
+}
+
+p {
+    max-width: 120ch;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
