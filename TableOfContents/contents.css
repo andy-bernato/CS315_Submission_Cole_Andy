@@ -1,7 +1,8 @@
 .vertical-menu {
-    width: 200px;
+    width: 20vw;
     margin: 0 auto;
     margin-top: 8%;
+    font-size:1vw;
 }
   
 .vertical-menu a {
