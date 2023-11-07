@@ -14,13 +14,21 @@
                 var surprise = new Audio('FlashbangSound.mp3');
                 const element = document.getElementById("bang");
                 element.remove();
-                function whiteout() {
-                var screen = document.getElementById("blinding");
-                screen.style.backgroundColor = "#FFFFFF";
-                }
                 surprise.play();
-                setTimeout(whiteout(), 20000);
-                
+
+                setTimeout(function() {
+                    var screen = document.getElementById("blinding");
+                    screen.style.backgroundColor = "#FFFFFF";
+
+                    function doAnim() {
+                        var target = document.getElementById("blinding");
+                        target.classList.add('fadingTime');
+                        target.classList.remove('fadingTime');
+                        void target.offsetWidth;
+                        target.classList.add('fadingTime');
+                    }
+                    doAnim();
+                }, 1900);   
             }
         </script>
     </div>
