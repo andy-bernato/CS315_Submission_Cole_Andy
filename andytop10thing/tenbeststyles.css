@@ -1,7 +1,7 @@
 #introtext {
     color: yellow;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 20px;
+    font-size: 2vw;
 }
 
 #mainbody {
@@ -10,19 +10,19 @@
 }
 
 #bodyHeaderText {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: yellow;
 }
 
 #methodology {
-    font-size: 23px;
+    font-size: 1.5vw;
     color: yellow
 }
 #mainbodyText {
     color: yellow;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 15px;
+    font-size: 1.1vw;
 }
 
 p {
