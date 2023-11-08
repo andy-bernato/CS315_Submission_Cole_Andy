@@ -2,6 +2,7 @@
 <html lang="en">
 <link rel="stylesheet" href="form.css" media="only screen and (min-width:770px)">
 <link rel="stylesheet" href="formsmall.css" media="only screen and (max-width:769px)">
+<script src="form.js"></script>
 
 <body id="formbody">
     <form onsubmit="return validateForm()" method="post" id="jsonInput" name = "validate">
@@ -13,7 +14,7 @@
             </p>
             <p>
                 <label for="email">Enter your email:</label>
-                <input type="email" id="email" name="Email">
+                <input id="firstemail" name="Email">
             </p>
             <p>
                 <label for="email">Enter someone else's email:</label>
@@ -44,28 +45,6 @@
     <p id="endInput">
         Your data will appear here.
     </p>
-    <script src="form.js"></script>
-    <script>
-        function randomPage() {
-            websiteArray = ['../andytop10thing/tenbestthing.html', '../programrap/PageSix.html']
-            arrayIndex = Math.floor(Math.random() * websiteArray.length);
-            window.location.href=websiteArray[arrayIndex]
-        }
-        function validateForm() {
-            let x = document.forms["validate"]["otheremail"].value;
-            let a = x.search("@")
-            if (a < 0) {
-                alert("Email 2 needs an @")
-                return false;
-            }
-            let d = x.search(".")
-            if ((d < 0) || (d < a)) {
-                alert("Email 2 needs a .")
-                return false;
-            }
-            return true;
-        }
-    </script>
     <button type="button" id="randomPage" onclick=randomPage()>
         Go to a WACKY random website
     </button>
