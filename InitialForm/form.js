@@ -1,4 +1,5 @@
 const form = document.getElementById('jsonInput');
+const block = document.getElementById('endInput')
 
 form.addEventListener('submit', callbackFunction);
 
@@ -9,4 +10,5 @@ function callbackFunction(event) {
     const formDataObj = {};
     myFormData.forEach((value, key) => (formDataObj[key] = value));
     console.log(formDataObj);
+    endInput.innerText = JSON.stringify(formDataObj);
 };
