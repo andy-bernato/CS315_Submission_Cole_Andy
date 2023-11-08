@@ -55,10 +55,12 @@
             let x = document.forms["validate"]["otheremail"].value;
             let a = x.search("@")
             if (a < 0) {
+                alert("Email 2 needs an @")
                 return false;
             }
             let d = x.search(".")
             if ((d < 0) || (d < a)) {
+                alert("Email 2 needs a .")
                 return false;
             }
             return true;
