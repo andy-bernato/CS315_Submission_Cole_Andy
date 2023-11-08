@@ -54,11 +54,11 @@
         function validateForm() {
             let x = document.forms["validate"]["otheremail"].value;
             let a = x.search("@")
-            if (n < 0) {
+            if (a < 0) {
                 return false;
             }
             let d = x.search(".")
-            if ((x < 0) || (x < a)) {
+            if ((d < 0) || (d < a)) {
                 return false;
             }
             return true;
