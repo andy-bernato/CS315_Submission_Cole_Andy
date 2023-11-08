@@ -1,0 +1,24 @@
+form {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 400px;
+}
+
+#endInput {
+    margin: 0 auto;
+    margin-left: 25%;
+    color: black;
+}
+
+legend {
+    text-align: center;
+}
+
+#formbody {
+    background-color: #779b54;
+    color: #686205
+}
+
+#randomPage {
+    margin-left: 43%;
+}

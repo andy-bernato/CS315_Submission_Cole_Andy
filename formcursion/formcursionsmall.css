@@ -1,0 +1,27 @@
+form {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 400px;
+}
+
+legend {
+    text-align: center;
+}
+
+#formbody {
+    background-color: #80ff00;
+    color: #FFF01f
+}
+
+#randomPage {
+    margin-left: 43%;
+}
+
+#return {
+    background-color: #80ff00;
+    border-color: #80ff00;
+    color:#80ff00;
+    width: 150x;
+    margin-top: 10%;
+    margin-left: 70%;
+}

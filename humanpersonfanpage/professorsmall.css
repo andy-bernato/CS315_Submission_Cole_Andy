@@ -1,0 +1,26 @@
+#professorWhoMainBody {
+    color:lightblue;
+}
+
+h1 {
+    color:lightblue
+}
+
+a:hover {
+    color: blueviolet;
+    background-color: blueviolet;
+    font-family: 'Times New Roman', Times, serif;
+}
+a:visited { 
+    color: violet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+a:active { 
+    font-size: 90px;
+    color:darkblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+p {
+    color:lightblue
+}

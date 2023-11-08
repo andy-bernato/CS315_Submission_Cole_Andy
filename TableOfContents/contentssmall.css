@@ -1,0 +1,18 @@
+.vertical-menu {
+    width: 20vw;
+    margin: 0 auto;
+    margin-top: 8%;
+    font-size:1vw;
+}
+  
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block; 
+    padding: 12px; 
+    text-decoration: none
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
