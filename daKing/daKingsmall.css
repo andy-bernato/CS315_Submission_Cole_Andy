@@ -14,12 +14,12 @@ html {
 }
 
 div p {
-    font-size: 30px;
+    font-size: 20px;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     color: rgb(3, 3, 3);
 }
 
 div p::first-letter {
-    font-size: 35px;
+    font-size: 25px;
     color: aqua;
 }

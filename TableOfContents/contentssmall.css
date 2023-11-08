@@ -2,14 +2,14 @@
     width: 20vw;
     margin: 0 auto;
     margin-top: 8%;
-    font-size:1vw;
+    font-size:0.8vw;
 }
   
 .vertical-menu a {
     background-color: #eee;
     color: black;
     display: block; 
-    padding: 12px; 
+    padding: 8px; 
     text-decoration: none
 }
 
