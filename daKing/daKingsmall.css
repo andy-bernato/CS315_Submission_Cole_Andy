@@ -1,0 +1,25 @@
+html {
+    text-align: center;
+    background-color: pink;
+}
+
+#main-chunk {
+    border-radius: 40px;
+    border: 40px solid transparent;
+    background-image: url('images/dddLightBlue.png');
+    border-image: url('images/dddStock.webp') 100 stretch;
+    background-size: cover;
+    overflow: scroll;
+    
+}
+
+div p {
+    font-size: 20px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: rgb(3, 3, 3);
+}
+
+div p::first-letter {
+    font-size: 25px;
+    color: aqua;
+}

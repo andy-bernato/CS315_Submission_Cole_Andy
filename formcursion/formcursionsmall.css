@@ -15,10 +15,19 @@ legend {
 }
 
 #formbody {
-    background-color: #80ff00;
-    color: #FFF01f
+    background-color: #779b54;
+    color: #686205
 }
 
 #randomPage {
     margin-left: 43%;
+}
+
+#return {
+    background-color: #80ff00;
+    border-color: #80ff00;
+    color:#80ff00;
+    width: 150x;
+    margin-top: 10%;
+    margin-left: 70%;
 }

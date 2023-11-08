@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="formcursion.css">
+<link rel="stylesheet" href="formcursion.css" media="screen and (min-width:769px)">
+<link rel="stylesheet" href="formcursionsmall.css" media="screen and (max-width:769px)">
 <body id="formbody">
     <form method="post" id="jsonInput">
         <fieldset>
@@ -39,7 +40,10 @@
             <input type="submit"/>
         </fieldset>
     </form>
-
+    <p id="endInput">
+        Your data will appear here.
+    </p>
+    <script src="form.js"></script>
     <script>
         function formcursion() {
             websiteArray = ['../andytop10thing/tenbestthing.html', '../programrap/PageSix.html']

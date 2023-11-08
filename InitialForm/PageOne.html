@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="form.css">
+<link rel="stylesheet" href="form.css" media="only screen and (min-width:770px)">
+<link rel="stylesheet" href="formsmall.css" media="only screen and (max-width:769px)">
+
 <body id="formbody">
     <form onsubmit="return validateForm()" method="post" id="jsonInput" name = "validate">
         <fieldset>
@@ -39,7 +41,10 @@
             <input type="submit"/>
         </fieldset>
     </form>
-
+    <p id="endInput">
+        Your data will appear here.
+    </p>
+    <script src="form.js"></script>
     <script>
         function randomPage() {
             websiteArray = ['../andytop10thing/tenbestthing.html', '../programrap/PageSix.html']
