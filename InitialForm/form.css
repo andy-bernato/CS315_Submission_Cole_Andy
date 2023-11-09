@@ -22,3 +22,12 @@ legend {
 #randomPage {
     margin-left: 43%;
 }
+
+#tableofcontents {
+    background-color: #80ff00;
+    border-color: #80ff00;
+    color:#80ff00;
+    width: 150x;
+    margin-top: 10%;
+    margin-left: 20%;
+}
