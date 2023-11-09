@@ -14,10 +14,12 @@ function callbackFunction(event) {
 };
 
 function randomPage() {
-    websiteArray = ['../andytop10thing/tenbestthing.html', '../programrap/PageSix.html']
+    websiteArray = ['../andytop10thing/tenbestthing.html', '../programrap/PageSix.html', '../colebottom10thing/PageTen.html', '../otherassignment/PageSeven.html', '../TableAlignment/PageTwo.html', '../humanpersonfanpage/theProf.html', 
+                    '../formcursion/PageEight.html', '../FLASHBANG!!/PageThree.html', '../daKing/PageFour.html']
     arrayIndex = Math.floor(Math.random() * websiteArray.length);
     window.location.href=websiteArray[arrayIndex]
-}
+};
+
 function validateForm() {
     let w = document.forms["validate"]["firstemail"].value;
     let x = document.forms["validate"]["otheremail"].value;
@@ -53,4 +55,4 @@ function validateForm() {
         alert(alertString);
         return false;
     }
-}
+};
