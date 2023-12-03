@@ -20,3 +20,22 @@
 #disclaimer {
     font-size: .3vw;
 }
+
+#storenav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+#storenav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+#storenav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
