@@ -40,19 +40,10 @@ legend {
 }
 
 #formbody {
-    background-color: #80ff00;
-    color: #FFF01f
+    background-color: black;
+    color: lightblue
 }
 
 #randomPage {
     margin-left: 43%;
-}
-
-#tableofcontents {
-    background-color: #80ff00;
-    border-color: #80ff00;
-    color:#80ff00;
-    width: 150x;
-    margin-top: 10%;
-    margin-left: 20%;
 }
