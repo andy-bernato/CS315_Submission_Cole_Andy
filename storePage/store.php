@@ -10,6 +10,9 @@
 <p style="color:black">
     .
 </p>
+<?php
+
+?>
 <body id="storeBody">
     <h1 style = "text-align: center;">Welcome to our store!</h1>
     <p>
@@ -19,12 +22,17 @@
     </p>
     <div class = "grid-container">
         <div class="grid-item">
-            <h>Table alignment commemorative plate</h>
-            <img src="storeimages/alignmentplate.png" width="20%">
-            <p>Price: $20</p>
+            <p>
+                <h>Table alignment commemorative plate</h>
+                <div>
+
+
+                </div>
+                <img src="storeimages/alignmentplate.png" width="20%">
+                <p>Price: $20</p>
+            </p>
         </div>
-        <div class="grid-item"> <!-- This looks funky but I can confirm it works when all 3 items in a row are full -->
-            <!-- Drunk Andy here: this isn't true, i need to fix the formatting -->
+        <div class="grid-item"> 
             <p>
                 <h>An actual, honest to god flashbang</h>
                 <div id="disclaimer">
@@ -42,10 +50,5 @@
             <img src="storeimages/an_actual_flashbang.jpg" width="20%">
         </div>  
         <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>  
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        <div class="grid-item">9</div>  
     </div>
 </body>
