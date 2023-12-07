@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="otherassign.css" media="only screen and (min-width:770px)">
-    <link rel="stylesheet" href="otherassignsmall.css" media="only screen and (max-width:769px)">
+<link rel="stylesheet" href="otherassign.css" media="only screen and (min-width:770px)">
+<link rel="stylesheet" href="otherassignsmall.css" media="only screen and (max-width:769px)">
+
+<div id="topnav">
+    <a href="../InitialForm/PageOne.php">Home</a>
+    <a href="../storePage/store.php">Store</a>
+    <a href="../login/login.php">Login</a>
+</div>
+
 <body style="background-color: rgb(255, 0, 200)">
     <table>
         <tr>
@@ -37,7 +44,4 @@
         </tr>
 
     </table>
-    <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
-        Return to Home
-    </button>
 </body>

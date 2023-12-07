@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<div id="topnav">
+    <a href="../InitialForm/PageOne.php">Home</a>
+    <a href="../storePage/store.php">Store</a>
+    <a href="../login/login.php">Login</a>
+</div>
+
 <head>
     <link rel="stylesheet" href="professor.css" media="only screen and (min-width:770px)">
     <link rel="stylesheet" href="professorsmall.css" media="onlyscreen and (max-width:769px)">

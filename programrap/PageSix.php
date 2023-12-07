@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="rapsmall.css" media="only screen and (max-width:769px)">
 </head>
 
+<div id="topnav">
+    <a href="../InitialForm/PageOne.php">Home</a>
+    <a href="../storePage/store.php">Store</a>
+    <a href="../login/login.php">Login</a>
+</div>
+
 <button type="button" id="starter" onclick="playRap();">
     Click Me! (please) (volume on) (seriously) (we put a lot of effort into this) (I mean it)
 </button>
@@ -66,7 +72,3 @@
         In the world of esoterics, we're the true specs.</p>
     </div>
 </body>
-
-<button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
-    Return to Home
-</button>

@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="daKingsmall.css" media="only screen and (max-width:769px)">
 </head>
 
+<div id="topnav">
+    <a href="../InitialForm/PageOne.php">Home</a>
+    <a href="../storePage/store.php">Store</a>
+    <a href="../login/login.php">Login</a>
+</div>
+
 <!-- <h>
     <body onload="soundTrigger()"></body>
     <script>

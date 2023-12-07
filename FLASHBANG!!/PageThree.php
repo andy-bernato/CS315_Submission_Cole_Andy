@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="flashbangsmall.css" media="only screen and (max-width:769px)">
 </head>
 
+<div id="topnav">
+    <a href="../InitialForm/PageOne.php">Home</a>
+    <a href="../storePage/store.php">Store</a>
+    <a href="../login/login.php">Login</a>
+</div>
+
 <body id="blinding">
     <div id="buttonHolder">
         <button type="button" id="bang" onclick="triggerWarning();">

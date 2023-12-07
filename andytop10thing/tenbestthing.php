@@ -3,6 +3,12 @@
 <head>
     <link rel="stylesheet" href="tenbeststyles.css" media="only screen and (min-width:770px)">
     <link rel="stylesheet" href="tenbeststylessmall.css" media="only screen and (max-width:769px)">
+    <div id="topnav">
+        <a href="../InitialForm/PageOne.php">Home</a>
+        <a href="../storePage/store.php">Store</a>
+        <a href="../login/login.php">Login</a>
+    </div>
+
     <p id="introtext">
         Hi, my name is Andy, and this is my ten favorite things in order from tenth favorite to most favorite.
 

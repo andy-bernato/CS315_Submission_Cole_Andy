@@ -3,6 +3,11 @@
     <head>
         <link rel="stylesheet" href="theWorst.css" media="only screen and (min-width:770px)">
         <link rel="stylesheet" href="theWorstsmall.css" media="only screen and (max-width:769px)">
+        <div id="topnav">
+            <a href="../InitialForm/PageOne.php">Home</a>
+            <a href="../storePage/store.php">Store</a>
+            <a href="../login/login.php">Login</a>
+        </div>
         <p id="introtext">
             Hey, this is Cole. In my personal opinion, Andy got the fun list. Now I get to make a list of my
             bottom 10 things. Is this less than idea? Absolutely. However, I lost the coin flip.
