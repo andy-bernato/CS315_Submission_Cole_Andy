@@ -8,9 +8,20 @@
     </div>
 </head>
 <p style="color:black">
-    .
+    
 </p>
 <?php
+    try {
+        $connStrink = "mysql:host=localhost:8888; dbname=mysql";
+        $user = "root";
+        $pass = "root";
+
+        $pdo= new PDO($connStrink, $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo("Successful connection");
+    } catch (PDOException $e) {
+        echo("Not succ");
+    }
 
 ?>
 <body id="storeBody">
