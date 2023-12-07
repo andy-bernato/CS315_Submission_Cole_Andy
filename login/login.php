@@ -43,10 +43,22 @@
                 $uname = $_POST["Username"];
                 $uemail = $_POST["Email"];
                 $upass = $_POST["Pass"];
-                echo "$uname, $uemail, $upass";
-                $sql = "INSERT INTO logins (username, password, email) VALUES(?,?,?)"; 
-                $result = $pdo->prepare($sql); //prep query to insert vals
-                $result->execute([$uname, $upass, $uemail]);
+                $excheck = $pdo->prepare("SELECT username FROM logins WHERE username = ?");
+                $excheck->execute([$uname]);
+                $excheckem = $pdo->prepare("SELECT username FROM logins WHERE email = ?");
+                $excheckem->execute([$uemail]);
+                if($excheck->rowCount() ==1) {
+                    echo "User already exists. Please either log in or choose a different username.";
+                }
+                else if($excheckem->rowCount() == 1) {
+                    echo "Email is already in use. Please select a new email.";
+                }
+                else {
+                    $sql = "INSERT INTO logins (username, password, email) VALUES(?,?,?)"; 
+                    $result = $pdo->prepare($sql); //prep query to insert vals
+                    $result->execute([$uname, $upass, $uemail]);
+                }
+                
             }
         }
         // closing the connection object
