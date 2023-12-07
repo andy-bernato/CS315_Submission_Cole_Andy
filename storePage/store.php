@@ -3,8 +3,8 @@
     <link rel="stylesheet" href="store.css" media="only screen and (min-width:770px)">
     <link rel="stylesheet" href="storesmall.css" media="only screen and (max-width:769px)">
     <div id="storenav">
-        <a class="active" href="store.html">Store</a>
-        <a href="../InitialForm/PageOne.html">Home</a>
+        <a class="active" href="store.php">Store</a>
+        <a href="../InitialForm/PageOne.php">Home</a>
     </div>
 </head>
 <p style="color:black">

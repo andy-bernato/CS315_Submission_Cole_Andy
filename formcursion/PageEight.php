@@ -56,7 +56,7 @@
     </button>
 </body>
 <footer>
-    <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.html';">
+    <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
         Return to Home
 </footer>
 </button>

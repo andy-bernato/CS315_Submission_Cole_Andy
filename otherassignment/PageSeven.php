@@ -31,13 +31,13 @@
                 simply looking to be confused, or by anyone who actively enjoys the weirdness that this poem is.</td>
         </tr>
         <tr>
-            <td><a href="../InitialForm/PageOne.html">Another Home Button</a></td>
+            <td><a href="../InitialForm/PageOne.php">Another Home Button</a></td>
             <td>Another way to return to our home page, completely separate from the actual one. Do note that
                 the other links on this page do not actually have a return to home button, so be warned.</td>
         </tr>
 
     </table>
-    <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.html';">
+    <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
         Return to Home
     </button>
 </body>

@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="formsmall.css" media="only screen and (max-width:769px)">
 
 <div id="topnav">
-    <a class="active" href="PageOne.html">Home</a>
-    <a href="../storePage/store.html">Store</a>
-    <a href="../login/login.html">Login</a>
-    <a href="../TableOfContents/TableOfContents.html">Table of Contents</a>
+    <a class="active" href="PageOne.php">Home</a>
+    <a href="../storePage/store.php">Store</a>
+    <a href="../login/login.php">Login</a>
+    <a href="../TableOfContents/TableOfContents.php">Table of Contents</a>
 </div>
 
 <body id="formbody">

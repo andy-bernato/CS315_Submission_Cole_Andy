@@ -106,7 +106,7 @@
             believe he's a main character. So here's to Cole being a main character. He's awesome and we love him.
         </p>
 
-        <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.html';">
+        <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
             Return to Home
         </button>
     </body>
