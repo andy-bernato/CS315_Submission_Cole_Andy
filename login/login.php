@@ -31,18 +31,22 @@
     $pass = "root";
     try {
         // creating a php database object
-        $pdo = new PDO($connString, $user, $pass);
+        $pdo = new PDO($connstring, $user, $pass);
         // exception handling parameters
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // creating the query to get rows of data from the table
-        $sql = "SELECT * FROM products";
-        $result = $pdo->query($sql); // committing the query
+        
         // navigating through all the rows one at a time
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            if (isset($_GET["username"]) &&
-            isset($_GET["pass"]) && 
-            isset($_GET["email"])) {
-
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST["Username"]) &&
+            isset($_POST["Pass"]) && 
+            isset($_POST["Email"])) {
+                $uname = $_POST["Username"];
+                $uemail = $_POST["Email"];
+                $upass = $_POST["Pass"];
+                echo "$uname, $uemail, $upass";
+                $sql = "INSERT INTO logins (username, password, email) VALUES(?,?,?)"; 
+                $result = $pdo->prepare($sql); //prep query to insert vals
+                $result->execute([$uname, $upass, $uemail]);
             }
         }
         // closing the connection object
