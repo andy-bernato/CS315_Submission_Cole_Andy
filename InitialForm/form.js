@@ -14,8 +14,8 @@ function callbackFunction(event) {
 };
 
 function randomPage() {
-    websiteArray = ['../andytop10thing/tenbestthing.html', '../programrap/PageSix.html', '../colebottom10thing/PageTen.html', '../otherassignment/PageSeven.html', '../TableAlignment/PageTwo.html', '../humanpersonfanpage/theProf.html', 
-                    '../formcursion/PageEight.html', '../FLASHBANG!!/PageThree.html', '../daKing/PageFour.html']
+    websiteArray = ['../andytop10thing/tenbestthing.php', '../programrap/PageSix.php', '../colebottom10thing/PageTen.php', '../otherassignment/PageSeven.php', '../TableAlignment/PageTwo.php', '../humanpersonfanpage/theProf.php', 
+                    '../formcursion/PageEight.php', '../FLASHBANG!!/PageThree.php', '../daKing/PageFour.php']
     arrayIndex = Math.floor(Math.random() * websiteArray.length);
     window.location.href=websiteArray[arrayIndex]
 };

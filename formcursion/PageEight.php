@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="formcursion.css" media="screen and (min-width:769px)">
-<link rel="stylesheet" href="formcursionsmall.css" media="screen and (max-width:769px)">
+<link rel="stylesheet" href="formcursion.css" media="only screen and (min-width:770px)">
+<link rel="stylesheet" href="formcursionsmall.css" media="only screen and (max-width:769px)">
+
+<div id="topnav">
+    <a class="active" href="../InitialForm/PageOne.php">Home</a>
+    <a href="./PageEight.php">Store</a>
+    <a href="./PageEight.php">Login</a>
+    <a href="./PageEight.php">Table of Contents</a>
+</div>
+
 <body id="formbody">
-    <form method="post" id="jsonInput">
+    <form onsubmit="return validateForm()" method="post" id="jsonInput" name = "validate">
         <fieldset>
             <legend> Totally Secure user data input </legend>
             <p>
@@ -12,11 +20,7 @@
             </p>
             <p>
                 <label for="email">Enter your email:</label>
-                <input type="email" id="email" name="Email">
-            </p>
-            <p>
-                <label for="email">Enter someone else's email:</label>
-                <input type="email" id="otheremail" name="Email">
+                <input id="firstemail" name="Email">
             </p>
             <p>
                 <label>How joitled are you right now:</label>
@@ -39,24 +43,10 @@
             </p>
             <input type="submit"/>
         </fieldset>
+        Your data will appear here
     </form>
-    <p id="endInput">
-        Your data will appear here.
-    </p>
-    <script src="form.js"></script>
-    <script>
-        function formcursion() {
-            websiteArray = ['../andytop10thing/tenbestthing.html', '../programrap/PageSix.html']
-            arrayIndex = Math.floor(Math.random() * websiteArray.length);
-            window.location.href='../formcursion/PageEight.html'
-        }
-    </script>
-    <button type="button" id="randomPage" onclick=formcursion()>
+    <button type="button" id="randomPage" onclick=randomPage()>
         Go to a WACKY random website
     </button>
+    <script src="form.js"></script>
 </body>
-<footer>
-    <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
-        Return to Home
-</footer>
-</button>

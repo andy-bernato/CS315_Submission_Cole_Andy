@@ -23,10 +23,6 @@
                 <input id="firstemail" name="Email">
             </p>
             <p>
-                <label for="email">Enter someone else's email:</label>
-                <input id="otheremail" name="Email Two">
-            </p>
-            <p>
                 <label>How joitled are you right now:</label>
                 non-joitled (Sad)
                 <input type="range" id="joitledness" min="0" max="10000" step="10" name="Is you joitled?"/>

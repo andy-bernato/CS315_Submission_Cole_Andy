@@ -1,3 +1,28 @@
+#topnav {
+    overflow:hidden;
+    background-color: black;
+    max-width:25%; /* This will need to be adjusted based on what we add */
+}
+
+#topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+#topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+#topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
 form {
     margin: 0 auto;
     margin-top: 10%;
@@ -15,19 +40,10 @@ legend {
 }
 
 #formbody {
-    background-color: #80ff00;
-    color: #FFF01f
+    background-color: black;
+    color: lightblue
 }
 
 #randomPage {
     margin-left: 43%;
-}
-
-#return {
-    background-color: #80ff00;
-    border-color: #80ff00;
-    color:#80ff00;
-    width: 150x;
-    margin-top: 10%;
-    margin-left: 70%;
 }
