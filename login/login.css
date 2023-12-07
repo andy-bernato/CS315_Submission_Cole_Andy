@@ -1,7 +1,7 @@
 #topnav {
     overflow:hidden;
     background-color: black;
-    max-width:14.5%; /* This will need to be adjusted based on what we add */
+    max-width:auto; /* This will need to be adjusted based on what we add */
 }
 
 #topnav a {
