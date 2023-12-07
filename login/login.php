@@ -1,3 +1,10 @@
+
+<div id="topnav">
+    <a href="../InitialForm/PageOne.php">Home</a>
+    <a href="../storePage/store.php">Store</a>
+    <a href="../login/login.php">Login</a>
+</div>
+
 <body id="formbody">
     <form  method="post" id="jsonInput" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>

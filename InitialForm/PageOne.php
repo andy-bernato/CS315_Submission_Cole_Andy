@@ -48,5 +48,5 @@
     <button type="button" id="randomPage" onclick=randomPage()>
         Go to a WACKY random website
     </button>
-    <script src="form.js"></script>
+    <script src="former.js"></script>
 </body>
