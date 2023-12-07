@@ -4,7 +4,7 @@
     <a href="../storePage/store.php">Store</a>
     <a href="../login/login.php">Login</a>
 </div>
-
+<link rel="stylesheet" href="login.css" media="only screen and (min-width:770px)">
 <body id="formbody">
     <form  method="post" id="jsonInput" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
