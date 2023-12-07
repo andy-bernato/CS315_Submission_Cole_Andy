@@ -26,7 +26,7 @@
         </fieldset>
     </form>
     <?php
-    $constring = "mysql:host=localhost;port=8889;dbname=ip_projects;";
+    $connstring = "mysql:host=localhost;port=8889;dbname=ip_projects;";
     $user = "root";
     $pass = "root";
     try {
@@ -35,7 +35,7 @@
         // exception handling parameters
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // creating the query to get rows of data from the table
-        $sql = "SELECT * FROM student_info";
+        $sql = "SELECT * FROM products";
         $result = $pdo->query($sql); // committing the query
         // navigating through all the rows one at a time
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
