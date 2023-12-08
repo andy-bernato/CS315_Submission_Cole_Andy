@@ -136,10 +136,5 @@ session_start();
                     }
                 </script>  
             </p>
-           
-            <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
-                Return to Home
-            </button>
-        </body>
-    
+        </body>   
     </main>

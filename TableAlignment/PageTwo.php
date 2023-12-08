@@ -36,7 +36,4 @@ session_start();
 <div>
     <img src="images/Screenshot 2023-11-06 201541.png" style="width:40%">
     <p></p>
-    <button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
-        Return to Home
-    </button>
 </div>

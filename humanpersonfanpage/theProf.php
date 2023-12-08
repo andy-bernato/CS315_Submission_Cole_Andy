@@ -65,7 +65,3 @@ session_start();
         </section>
     </body>
 </main>
-
-<button type="button" id="return" onclick="window.location.href='../InitialForm/PageOne.php';">
-    Return to Home
-</button>
