@@ -10,7 +10,7 @@ session_start();
 <div style="background-color: beige;">
     <body style="background-color: beige;">
     <?php
-    if (!isset($_SESSION["login"]))
+    if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")
     {
         $_SESSION["login"] = "false";
         $_SESSION["uname"] = "";

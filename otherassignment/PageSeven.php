@@ -10,12 +10,18 @@ session_start();
 <div id="topnav">
     <a href="../InitialForm/PageOne.php">Home</a>
     <a href="../storePage/store.php">Store</a>
-    <a href="../login/login.php">Login</a>
+    <a href="../returninguserlogin/returninglogin.php">Login</a>
+    <?php
+        if ($_SESSION["login"] == "true")
+        {
+            echo '<a href="../logout/logout.php">Logout</a>';
+        }
+        ?>
 </div>
 
 <body style="background-color: rgb(255, 0, 200)">
     <?php
-    if (!isset($_SESSION["login"]))
+    if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")
     {
         $_SESSION["login"] = "false";
         $_SESSION["uname"] = "";

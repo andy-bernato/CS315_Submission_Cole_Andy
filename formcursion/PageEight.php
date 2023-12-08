@@ -16,7 +16,7 @@ session_start();
 
 <body id="formbody">
     <?php
-    if (!isset($_SESSION["login"]))
+    if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")
     {
         $_SESSION["login"] = "false";
         $_SESSION["uname"] = "";

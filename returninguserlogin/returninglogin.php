@@ -5,12 +5,18 @@ session_start();
 <div id="topnav">
     <a href="../InitialForm/PageOne.php">Home</a>
     <a href="../storePage/store.php">Store</a>
-    <a class="active" href="./newuser.php">Login</a>
+    <a class="active" href="../newlogin/newuser.php">New User</a>
+    <?php
+        if ($_SESSION["login"] == "true")
+        {
+            echo '<a href="../logout/logout.php">Logout</a>';
+        }
+        ?>
 </div>
 <link rel="stylesheet" href="newuserlogin.css" media="only screen and (min-width:770px)">
 <body id="formbody">
     <?php
-    if (!isset($_SESSION["login"]))
+    if (!isset($_SESSION["login"]) || $_SESSION["login"] == "false")
     {
         $_SESSION["login"] = "false";
         $_SESSION["uname"] = "";
@@ -53,15 +59,18 @@ session_start();
                 $upass = $_POST["Pass"];
                 $excheck = $pdo->prepare("SELECT username FROM logins WHERE username = ?");
                 $excheck->execute([$uname]);
+                $passcheck = $pdo->prepare("SELECT password FROM logins WHERE password = ?");
+                $passcheck->execute([$upass]);
                 if($excheck->rowCount() !=1) {
                     echo "Username not found in database. Please double check spelling and try again";
                 }
+                elseif($passcheck->rowCount() !=1) {
+                    echo "Password is incorrect. Please double check spelling and try again";
+                }
                 else {
-                    $sql = "INSERT INTO logins (username, password, email) VALUES(?,?,?)"; 
-                    $result = $pdo->prepare($sql); //prep query to insert vals
-                    $result->execute([$uname, $upass, $uemail]);
                     $_SESSION["login"] = "true";
                     $_SESSION["uname"] = $uname;
+                    echo "Welcome back, $uname!";
                 }
                 
             }

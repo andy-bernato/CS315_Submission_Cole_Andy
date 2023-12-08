@@ -9,6 +9,13 @@ session_start();
     <div id="storenav">
         <a class="active" href="store.php">Store</a>
         <a href="../InitialForm/PageOne.php">Home</a>
+        <a href="../returninguserlogin/returninglogin.php">Login</a>
+        <?php
+        if ($_SESSION["login"] == "true")
+        {
+            echo '<a href="../logout/logout.php">Logout</a>';
+        }
+        ?>
     </div>
 </head>
 <p style="color:black">
@@ -29,7 +36,7 @@ session_start();
 ?>
 <body id="storeBody">
     <?php
-    if (!isset($_SESSION["login"]))
+    if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")
     {
         $_SESSION["login"] = "false";
         $_SESSION["uname"] = "";
