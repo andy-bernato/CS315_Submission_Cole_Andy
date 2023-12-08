@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="store.css" media="only screen and (min-width:770px)">
@@ -25,6 +29,12 @@
 
 ?>
 <body id="storeBody">
+    <?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
     <h1 style = "text-align: center;">Welcome to our store!</h1>
     <p>
         We have several delightful wares we're sure you'd be interested in. Prices are as listed, though

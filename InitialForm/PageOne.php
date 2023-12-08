@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="form.css" media="only screen and (min-width:770px)">
@@ -11,6 +15,12 @@
 </div>
 
 <body id="formbody">
+    <?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
     <form method="post" id="jsonInput" name = "validate">
         <fieldset>
             <legend> Totally Secure user data input </legend>

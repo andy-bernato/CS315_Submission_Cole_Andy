@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="otherassign.css" media="only screen and (min-width:770px)">
@@ -10,6 +14,12 @@
 </div>
 
 <body style="background-color: rgb(255, 0, 200)">
+    <?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
     <table>
         <tr>
             <th>Link</th>

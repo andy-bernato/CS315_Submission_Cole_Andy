@@ -1,4 +1,7 @@
-
+<?php
+// Start the session
+session_start();
+?>
 <div id="topnav">
     <a href="../InitialForm/PageOne.php">Home</a>
     <a href="../storePage/store.php">Store</a>
@@ -6,6 +9,12 @@
 </div>
 <link rel="stylesheet" href="newuserlogin.css" media="only screen and (min-width:770px)">
 <body id="formbody">
+<?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
     <form  method="post" id="jsonInput" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
             <legend> Create New User </legend>

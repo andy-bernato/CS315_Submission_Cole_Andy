@@ -1,6 +1,16 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
     <link rel="stylesheet" href="tenbeststyles.css" media="only screen and (min-width:770px)">
     <link rel="stylesheet" href="tenbeststylessmall.css" media="only screen and (max-width:769px)">
     <div id="topnav">

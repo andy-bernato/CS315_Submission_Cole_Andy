@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="contentssmall.css" media="only screen and (max-width:769px)">
@@ -5,6 +9,12 @@
 
 <div style="background-color: beige;">
     <body style="background-color: beige;">
+    <?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
         <menu class="vertical-menu">
             Table of Contents
             <a href="../InitialForm/PageOne.php" class="active">Initial Form</a>

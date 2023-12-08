@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +29,12 @@
     }
 </script>
 <body>
+<?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
     <div id="rapText">
         <p>Yo, gather 'round, let me school you 'bout these esoteric codes,
         Languages so wild, they'll make your mind explode.

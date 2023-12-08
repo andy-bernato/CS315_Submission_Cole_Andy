@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +27,12 @@
 </h> -->
 
 <body id="mainChunk">
+    <?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
     <div id="main-chunk">
         <p>Oh, King DeDeDe, in my tipsy, happy state,
         I've had a few too many stars, I'm feeling great.

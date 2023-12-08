@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +16,12 @@
 </div>
 
 <body id="blinding">
+    <?php
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"] = "false";
+    };
+    ?>
     <div id="buttonHolder">
         <button type="button" id="bang" onclick="triggerWarning();">
             Click Me!
