@@ -13,6 +13,11 @@ session_start();
     if (!isset($_SESSION["login"]))
     {
         $_SESSION["login"] = "false";
+        $_SESSION["uname"] = "";
+    }
+    else
+    {
+        echo $_SESSION["uname"] . " is currently logged in.";
     };
     ?>
     <form  method="post" id="jsonInput" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -66,6 +71,9 @@ session_start();
                     $sql = "INSERT INTO logins (username, password, email) VALUES(?,?,?)"; 
                     $result = $pdo->prepare($sql); //prep query to insert vals
                     $result->execute([$uname, $upass, $uemail]);
+                    $_SESSION["login"] = "true";
+                    $_SESSION["uname"] = "$uname";
+                    echo "Thank you for creating a new account $uname!";
                 }
                 
             }

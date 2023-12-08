@@ -16,15 +16,14 @@ session_start();
 </p>
 <?php
     try {
-        $connStrink = "mysql:host=localhost:8888; dbname=mysql";
+        $connStrink = "mysql:host=localhost:8889; dbname=ip_projects";
         $user = "root";
         $pass = "root";
 
         $pdo= new PDO($connStrink, $user, $pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo("Successful connection");
     } catch (PDOException $e) {
-        echo("Not succ");
+        echo("Database connection unsuccessful");
     }
 
 ?>
@@ -33,6 +32,11 @@ session_start();
     if (!isset($_SESSION["login"]))
     {
         $_SESSION["login"] = "false";
+        $_SESSION["uname"] = "";
+    }
+    else
+    {
+        echo $_SESSION["uname"] . " is currently logged in.";
     };
     ?>
     <h1 style = "text-align: center;">Welcome to our store!</h1>

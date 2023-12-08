@@ -9,6 +9,11 @@ session_start();
         if (!isset($_SESSION["login"]))
         {
             $_SESSION["login"] = "false";
+            $_SESSION["uname"] = "";
+        }
+        else
+        {
+            echo $_SESSION["uname"] . " is currently logged in.";
         };
         ?>
         <link rel="stylesheet" href="theWorst.css" media="only screen and (min-width:770px)">
