@@ -11,7 +11,7 @@
 </div>
 
 <body id="formbody">
-    <form onsubmit="return validateForm()" method="post" id="jsonInput" name = "validate">
+    <form method="post" id="jsonInput" name = "validate">
         <fieldset>
             <legend> Totally Secure user data input </legend>
             <p>
@@ -19,7 +19,7 @@
                 <input type="text" id="nameID" name="Name" />
             </p>
             <p>
-                <label for="email">Enter your email:</label>
+                <label for="email">What's your favorite plane of existence?:</label>
                 <input id="firstemail" name="Email">
             </p>
             <p>
