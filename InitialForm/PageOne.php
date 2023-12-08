@@ -6,7 +6,7 @@
 <div id="topnav">
     <a class="active" href="PageOne.php">Home</a>
     <a href="../storePage/store.php">Store</a>
-    <a href="../login/login.php">Login</a>
+    <a href="../newlogin/newuser.php">Login</a>
     <a href="../TableOfContents/TableOfContents.php">Table of Contents</a>
 </div>
 

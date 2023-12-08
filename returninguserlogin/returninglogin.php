@@ -1,10 +1,9 @@
-
 <div id="topnav">
     <a href="../InitialForm/PageOne.php">Home</a>
     <a href="../storePage/store.php">Store</a>
-    <a href="../login/login.php">Login</a>
+    <a class="active" href="./newuser.php">Login</a>
 </div>
-<link rel="stylesheet" href="login.css" media="only screen and (min-width:770px)">
+<link rel="stylesheet" href="newuserlogin.css" media="only screen and (min-width:770px)">
 <body id="formbody">
     <form  method="post" id="jsonInput" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
@@ -12,10 +11,6 @@
             <p>
                 <label>Name:</label>
                 <input type="text" id="username" name="Username" />
-            </p>
-            <p>
-                <label for="email">Enter your email:</label>
-                <input id="email" name="Email">
             </p>
             <p>
                 <label for="text">Create a Password:</label>
@@ -38,20 +33,13 @@
         // navigating through all the rows one at a time
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST["Username"]) &&
-            isset($_POST["Pass"]) && 
-            isset($_POST["Email"])) {
+            isset($_POST["Pass"])) {
                 $uname = $_POST["Username"];
-                $uemail = $_POST["Email"];
                 $upass = $_POST["Pass"];
                 $excheck = $pdo->prepare("SELECT username FROM logins WHERE username = ?");
                 $excheck->execute([$uname]);
-                $excheckem = $pdo->prepare("SELECT username FROM logins WHERE email = ?");
-                $excheckem->execute([$uemail]);
-                if($excheck->rowCount() ==1) {
-                    echo "User already exists. Please either log in or choose a different username.";
-                }
-                else if($excheckem->rowCount() == 1) {
-                    echo "Email is already in use. Please select a new email.";
+                if($excheck->rowCount() !=1) {
+                    echo "Username not found in database. Please double check spelling and try again";
                 }
                 else {
                     $sql = "INSERT INTO logins (username, password, email) VALUES(?,?,?)"; 
