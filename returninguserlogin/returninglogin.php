@@ -7,9 +7,9 @@
 <body id="formbody">
     <form  method="post" id="jsonInput" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
-            <legend> Create New User </legend>
+            <legend> Login</legend>
             <p>
-                <label>Name:</label>
+                <label>username:</label>
                 <input type="text" id="username" name="Username" />
             </p>
             <p>
