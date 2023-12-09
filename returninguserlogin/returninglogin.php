@@ -67,6 +67,17 @@ session_start();
                 }
             } else {
                 $userError = "Username is required.";
+                if ((empty($_POST["Pass"]))) {
+                   $passError = "Password is required.";
+                }
+            }
+
+            if (strlen($userError) > 1) {
+                // Css mod
+            }
+
+            if (strlen($passError) > 1) {
+                // css mod
             }
         }
         // closing the connection object
