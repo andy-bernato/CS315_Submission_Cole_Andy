@@ -11,7 +11,7 @@ session_start();
         {
             echo '<a href="../logout/logout.php">Logout</a>';
         }
-        ?>
+    ?>
 </div>
 <link rel="stylesheet" href="newuserlogin.css" media="only screen and (min-width:770px)">
 <body id="formbody">
@@ -26,25 +26,26 @@ session_start();
         echo $_SESSION["uname"] . " is currently logged in.";
     };
     ?>
-    <form  method="post" id="jsonInput" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form  method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
             <legend> Login</legend>
-            <p>
-                <label>username:</label>
-                <input type="text" id="username" name="Username" />
-            </p>
-            <p>
-                <label for="text">Create a Password:</label>
-                <input id="pass" name="Pass">
-            </p>
+                Username: <input type="text" id="username" name="User" />
+                <span class="error">* <?php echo $userError;?></span>
+                <br><br>
+            
+                Password: <input type = "text" id="pass" name="Pass">
+                <span class="error">* <?php echo $passError;?></span>
+                <br><br>
 
-            <input type="submit"/>
+            <input type="submit" name = "submit" value = "Submit"/>
         </fieldset>
     </form>
     <?php
     $connstring = "mysql:host=localhost;port=8889;dbname=ip_projects;";
     $user = "root";
     $pass = "root";
+    $uname = $upass = "";
+    $userError = $passError = "";
     try {
         // creating a php database object
         $pdo = new PDO($connstring, $user, $pass);
@@ -53,26 +54,43 @@ session_start();
         
         // navigating through all the rows one at a time
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (isset($_POST["Username"]) &&
-            isset($_POST["Pass"])) {
-                $uname = $_POST["Username"];
-                $upass = $_POST["Pass"];
-                $excheck = $pdo->prepare("SELECT username FROM logins WHERE username = ?");
-                $excheck->execute([$uname]);
-                $passcheck = $pdo->prepare("SELECT password FROM logins WHERE password = ?");
-                $passcheck->execute([$upass]);
-                if($excheck->rowCount() !=1) {
-                    echo "Username not found in database. Please double check spelling and try again";
+            if (isset($_POST["Username"])) {
+                if (isset($_POST["Pass"])) {
+                    $uname = clean_input($_POST["User"]);
+                    $upass = clean_input($_POST["Pass"]);
+                    if (!preg_match("/^[\.a-zA-Z0-9,!? ]*$/",$name)) {
+                        $userError = "Only letters, numbers, basic punctuation, and white space allowed";
+                    }
+
+                    $excheck = $pdo->prepare("SELECT username FROM logins WHERE username = ?");
+                    $excheck->execute([$uname]);
+                    $passcheck = $pdo->prepare("SELECT password FROM logins WHERE password = ?");
+                    $passcheck->execute([$upass]);
+                    if($excheck->rowCount() !=1) {
+                        if (!(empty($nameError)))
+                        $userError = "Username not found in database. Please double check spelling and try again";
+                    }
+                    elseif($passcheck->rowCount() !=1) {
+                        $passError = "Password is incorrect. Please double check spelling and try again";
+                    }
+                    else {
+                        $_SESSION["login"] = "true";
+                        $_SESSION["uname"] = $uname;
+                        echo "Welcome back, $uname!";
+                    }
+    
+                    function clean_input($data) {
+                        $data = trim($data);
+                        $data = stripslashes($data);
+                        $data = htmlspecialchars($data);
+                        return $data;
+                    }
+
+                } else {
+                    $passError = "Password is required";
                 }
-                elseif($passcheck->rowCount() !=1) {
-                    echo "Password is incorrect. Please double check spelling and try again";
-                }
-                else {
-                    $_SESSION["login"] = "true";
-                    $_SESSION["uname"] = $uname;
-                    echo "Welcome back, $uname!";
-                }
-                
+            } else {
+                $userError = "Username is required.";
             }
         }
         // closing the connection object
