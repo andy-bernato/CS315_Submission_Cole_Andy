@@ -10,6 +10,7 @@ session_start();
         <a class="active" href="store.php">Store</a>
         <a href="../InitialForm/PageOne.php">Home</a>
         <a href="../returninguserlogin/returninglogin.php">Login</a>
+        <a class="cart" href="../cart/cart.php">Cart</a>
         <?php
         if ($_SESSION["login"] == "true")
         {
@@ -34,6 +35,52 @@ session_start();
     }
 
 ?>
+
+<?php
+      
+    if(isset($_POST['plateButton'])) {
+        $cookie_value;
+        $cookie_name = "PlateCookie";
+        if (isset($_COOKIE[$cookie_name])) {
+            $cookie_value = $_COOKIE[$cookie_name] + 1;
+        } else {
+            $cookie_value = 0;
+        }
+        setcookie($cookie_name, $cookie_value, time() + 8000, "/");
+    } 
+    if(isset($_POST['flashButton'])) {
+        $cookie_value;
+        $cookie_name = "FlashCookie";
+        if (isset($_COOKIE[$cookie_name])) {
+            $cookie_value = $_COOKIE[$cookie_name] + 1;
+        } else {
+            $cookie_value = 0;
+        }
+        setcookie($cookie_name, $cookie_value, time() + 8000, "/");
+    } 
+
+    if(isset($_POST['videoButton'])) {
+        $cookie_value;
+        $cookie_name = "VideoCookie";
+        if (isset($_COOKIE[$cookie_name])) {
+            $cookie_value = $_COOKIE[$cookie_name] + 1;
+        } else {
+            $cookie_value = 0;
+        }
+        setcookie($cookie_name, $cookie_value, time() + 8000, "/");
+    }
+    if(isset($_POST['rapButton'])) {
+        $cookie_value;
+        $cookie_name = "RapCookie";
+        if (isset($_COOKIE[$cookie_name])) {
+            $cookie_value = $_COOKIE[$cookie_name] + 1;
+        } else {
+            $cookie_value = 0;
+        }
+        setcookie($cookie_name, $cookie_value, time() + 8000, "/");
+    } // These should probably just become one function
+
+?>
 <body id="storeBody">
     <?php
     if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")
@@ -46,6 +93,7 @@ session_start();
         echo $_SESSION["uname"] . " is currently logged in.";
     };
     ?>
+    <br>
     <h1 style = "text-align: center;">Welcome to our store!</h1>
     <p>
         We have several delightful wares we're sure you'd be interested in. Prices are as listed, though
@@ -56,12 +104,32 @@ session_start();
         <div class="grid-item">
             <p>
                 <h>Table alignment commemorative plate</h>
-                <div>
-
-
-                </div>
+                <br><br>
                 <img src="storeimages/alignmentplate.png" width="20%">
-                <p>Price: $20</p>
+                <p>
+                    <?php
+                    if ($_SESSION["login"] == "true")
+                    {
+                        echo 'Price: $18';
+                    } else {
+                        echo 'Price: $20';
+                    }
+                    ?>
+                    <br>
+                    What better way is there to celebrate Christmas than with a unique commemorative plate?
+                    Perfect for all of your eating and table-ranking needs!
+                </p>
+                <form method="post">
+                    <input type="submit" name="plateButton"
+                    class="button" value="Buy" onclick=addedPlate()/>
+                </form>
+                <p>
+                <?php 
+                if (isset($_POST['plateButton'])) {
+                    echo ("Added to cart!");
+                }
+                ?> 
+            </p>
             </p>
         </div>
         <div class="grid-item"> 
@@ -75,12 +143,88 @@ session_start();
             </p>
             <img src="storeimages/an_actual_flashbang.jpg" width="20%">
             <p>
-                Price: $100
+                <?php
+                    if ($_SESSION["login"] == "true")
+                    {
+                        echo 'Price: $180';
+                    } else {
+                        echo 'Price: $200';
+                    }
+                ?>
+            </p>
+            <form method="post">
+                <input type="submit" name="flashButton"
+                class="button" value="Buy" onclick=addedFlash()/>
+            </form>
+
+            <p>
+                <?php 
+                if (isset($_POST['flashButton'])) {
+                    echo ("Added to cart!");
+                }
+                ?> 
             </p>
         </div>
         <div class="grid-item">
-            <img src="storeimages/an_actual_flashbang.jpg" width="20%">
+            <p>
+                <h>Inside Insight Videos From Us</h>
+            </p>
+            <img src="storeimages/cole_andy.JPG" width="40%">
+            <p>
+                <?php
+                    if ($_SESSION["login"] == "true")
+                    {
+                        echo 'Price: $15';
+                    } else {
+                        echo 'Price: $18';
+                    }
+                ?>
+                Ever wonder why we made our assignments in the "Previous Assignments" page the way we did? Wonder no more!
+                These videos will make sure you know exactly why we did the things we did! Perfect Christmas gift for any child.
+            </p>
+
+            <form method="post">
+                <input type="submit" name="videoButton"
+                class="button" value="Buy" onclick=addedVideo()/>
+            </form>
+
+            <p>
+                <?php 
+                if (isset($_POST['videoButton'])) {
+                    echo ("Added to cart!");
+                }
+                ?> 
+            </p>
+
         </div>  
-        <div class="grid-item">4</div>
+        <div class="grid-item">
+            <h>Foreword from DJ Esoteric Rappuh</h>
+            <!-- maybe some image of me? -->
+            <p>
+                <?php
+                    if ($_SESSION["login"] == "true")
+                    {
+                        echo 'Price: $8';
+                    } else {
+                        echo 'Price: $10';
+                    }
+                ?>
+                An mp4 of the inspired, passionate esoteric rap from the namesake page, complete with a foreword
+                from the man who rapped it. A must-have for any rap enthusiast.
+            </p>
+
+            <form method="post">
+                <input type="submit" name="rapButton"
+                class="button" value="Buy" onclick=addedRap()/>
+            </form>
+
+            <p>
+                <?php 
+                if (isset($_POST['rapButton'])) {
+                    echo ("Added to cart!");
+                }
+                ?> 
+            </p>
+        </div>
     </div>
 </body>
