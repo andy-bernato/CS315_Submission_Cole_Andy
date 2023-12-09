@@ -22,3 +22,8 @@
     background-color: #04AA6D;
     color: white;
 }
+
+#errorMessage {
+    color: red;
+    background-color: yellow;
+}

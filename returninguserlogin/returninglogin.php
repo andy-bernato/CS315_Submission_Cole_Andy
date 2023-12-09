@@ -2,10 +2,11 @@
 // Start the session
 session_start();
 ?>
+<link rel="stylesheet" href="returninglogin.css" media="only screen and (min-width:770px)">
 <div id="topnav">
     <a href="../InitialForm/PageOne.php">Home</a>
     <a href="../storePage/store.php">Store</a>
-    <a class="active" href="../newlogin/newuser.php">New User</a>
+    <a href="../newlogin/newuser.php">New User</a>
     <?php
         if ($_SESSION["login"] == "true")
         {
@@ -42,9 +43,6 @@ session_start();
                 if (!(empty($_POST["Pass"]))) {
                     $uname = clean_input($_POST["User"]);
                     $upass = clean_input($_POST["Pass"]);
-                    if (!preg_match("/^[\.a-zA-Z0-9,!? ]*$/",$name)) {
-                        $userError = "Only letters, numbers, basic punctuation, and white space allowed";
-                    }
 
                     $excheck = $pdo->prepare("SELECT username FROM logins WHERE username = ?");
                     $excheck->execute([$uname]);
@@ -94,7 +92,7 @@ session_start();
     <form  method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
             <legend> Login</legend>
-                Username: <input type="text" id="username" name="User" />
+                Username: <input type="text" id="username" name="User"/>
                 <span class="error">* <?php echo $userError;?></span>
                 <br><br>
             
