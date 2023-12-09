@@ -32,9 +32,12 @@ session_start();
     $user = "root";
     $pass = "root";
 
-    $uname = $upass = $uemail;
+    $newuname;
+    $newupass;
+    $newuemail;
 
     $userError = $passError = $emailError = "";
+    $isError = false;
 
     try {
         // creating a php database object
@@ -42,7 +45,7 @@ session_start();
         // exception handling parameters
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        function clean_input($data) {
+        function clean_new_input($data) {
             $data = trim($data);
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
@@ -51,49 +54,60 @@ session_start();
         
         // navigating through all the rows one at a time
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (!(empty($_POST["Username"]))) {
-                if (!(empty($_POST["Pass"]))) {
+            if ((empty($_POST["User"]))) {
+                $isError = true;
+                $userError = "Username is required";
+            }
+            if ((empty($_POST["Pass"]))) {
+                $isError = true;
+                $passError = "Password is required";
+            }
+            if ((empty($_POST["Email"]))) {
+                $isError = true;
+                $emailError = "Email is required";
+            } else if (!filter_var(($_POST["Email"]), FILTER_VALIDATE_EMAIL)) {
+                $emailError = "Invalid email format";
+            }
+            if (!($isError)) {
+                $newuname = clean_new_input($_POST["Username"]);
+                $newuemail = clean_new_input($_POST["Email"]);
+                $newupass = clean_new_input($_POST["Pass"]);
 
-                    if (!(empty($_POST["Email"]))) {
-                        $uname = clean_input($_POST["Username"]);
-                        $uemail = clean_input($_POST["Email"]);
-                        $upass = clean_input($_POST["Pass"]);
-
-                        echo("Cleaned");
-
-                        $excheck = $pdo->prepare("SELECT username FROM logins WHERE username = ?");
-                        $excheck->execute([$uname]);
-                        $excheckem = $pdo->prepare("SELECT username FROM logins WHERE email = ?");
-                        $excheckem->execute([$uemail]);
-                        echo("Checked");
-                        if($excheck->rowCount() ==1) {
-                            $userError += "User already exists. Please either log in or choose a different username.";
-                        }
-                        else if($excheckem->rowCount() == 1) {
-                            $emailError += "Email is already in use. Please select a new email.";
-                        }
-                        else {
-                            $sql = "INSERT INTO logins (username, password, email) VALUES(?,?,?)"; 
-                            $result = $pdo->prepare($sql); //prep query to insert vals
-                            $result->execute([$uname, $upass, $uemail]);
-                            $_SESSION["login"] = "true";
-                            $_SESSION["uname"] = "$uname";
-                            echo "Thank you for creating a new account $uname!";
-                        }
-                        
-                    } else {
-                        echo ("enail error");
-                        $emailError += "Email is required.";
+                $excheck = $pdo->prepare("SELECT username FROM logins WHERE username = ?");
+                $excheck->execute([$newuname]);
+                $excheckem = $pdo->prepare("SELECT username FROM logins WHERE email = ?");
+                $excheckem->execute([$newuemail]);
+                echo("Checked");
+                if($excheck->rowCount() ==1) {
+                    $userError += "Username unavailable. Please either log in or choose a different username.";
+                }
+                else if($excheckem->rowCount() == 1) {
+                    if ((strlen($emailError)) < 3) {
+                        $emailError = "Email is already in use. Please select a new email.";
                     }
-
-                } else {
-                    echo ("pass error");
-                    $passError += "Password is required.";
+                }
+                else {
+                    $sql = "INSERT INTO logins (username, password, email) VALUES(?,?,?)"; 
+                    $result = $pdo->prepare($sql); //prep query to insert vals
+                    $result->execute([$newuname, $newupass, $newuemail]);
+                    $_SESSION["login"] = "true";
+                    $_SESSION["uname"] = "$uname";
+                    echo "Thank you for creating a new account $uname!";
                 }
 
-            } else {
-                echo ("user error");
-                $userError += "Username is required.";
+            }
+                        
+
+            if (strlen($userError) > 1) {
+                // Css mod
+            }
+
+            if (strlen($passError) > 1) {
+                // css mod
+            }
+
+            if (strlen($emailError) > 1) {
+                // CSS MOD
             }
         }
         // closing the connection object
@@ -115,13 +129,13 @@ session_start();
             <p>
                 <label for="email">Enter your email:</label>
                 <input id="email" name="Email">
-                <span class="error">* <?php echo $passError;?></span>
+                <span class="error">* <?php echo $emailError;?></span>
                 <br><br>
             </p>
             <p>
                 <label for="text">Create a Password:</label>
                 <input id="pass" name="Pass">
-                <span class="error">* <?php echo $emailError;?></span>
+                <span class="error">* <?php echo $passError;?></span>
                 <br><br>
             </p>
 
