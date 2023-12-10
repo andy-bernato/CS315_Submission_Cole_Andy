@@ -185,11 +185,12 @@ session_start();
                 <br>
                 Ever wonder why we made our assignments in the "Previous Assignments" page the way we did? Wonder no more!
                 These videos will make sure you know exactly why we did the things we did! Perfect Christmas gift for any child.
+                Sold in NFT form to protect against redistribution.
             </p>
 
             <form method="post">
                 <input type="submit" name="videoButton"
-                class="button" value="Buy" onclick=addedVideo()/>
+                class="button" value="Buy"/>
             </form>
 
             <p>
@@ -215,7 +216,7 @@ session_start();
                 ?>
                 <br>
                 An mp4 of the inspired, passionate esoteric rap from the namesake page, complete with a foreword
-                from the man who rapped it. A must-have for any rap enthusiast.
+                from the man who rapped it. A must-have for any rap enthusiast. Also sold as an NFT.
             </p>
 
             <form method="post">
