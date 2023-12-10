@@ -64,9 +64,9 @@ session_start();
             } else if (!filter_var(($_POST["Security"]), FILTER_VALIDATE_INT)) {
                 $secError = "Invalid Security Number";
             }
-            $addReg = "[A-Za-z0-9'\.\-\s\,]";
+            $addReg = "[A-Za-z0-9\.\-\s\,]";
             $addFail = preg_match($addReg, $_POST["Add"]);
-            if ((empty($_POST["Add"])) || !$addFail === 0) {
+            if ((empty($_POST["Add"])) || $addFail) {
                 $isError = true;
                 $addError = "Address is not Valid";
             }
