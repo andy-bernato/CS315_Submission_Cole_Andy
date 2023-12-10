@@ -204,7 +204,8 @@ session_start();
         </div>  
         <div class="grid-item">
             <h>Foreword from DJ Esoteric Rappuh</h>
-            <!-- maybe some image of me? -->
+            <br><br>
+            <img src="storeimages/toddshadows.jpg" width="30%">
             <p>
                 <?php
                     if ($_SESSION["login"] == "true")
