@@ -44,7 +44,7 @@ session_start();
         if (isset($_COOKIE[$cookie_name])) {
             $cookie_value = $_COOKIE[$cookie_name] + 1;
         } else {
-            $cookie_value = 0;
+            $cookie_value = 1;
         }
         setcookie($cookie_name, $cookie_value, time() + 8000, "/");
     } 
@@ -54,7 +54,7 @@ session_start();
         if (isset($_COOKIE[$cookie_name])) {
             $cookie_value = $_COOKIE[$cookie_name] + 1;
         } else {
-            $cookie_value = 0;
+            $cookie_value = 1;
         }
         setcookie($cookie_name, $cookie_value, time() + 8000, "/");
     } 
@@ -65,7 +65,7 @@ session_start();
         if (isset($_COOKIE[$cookie_name])) {
             $cookie_value = $_COOKIE[$cookie_name] + 1;
         } else {
-            $cookie_value = 0;
+            $cookie_value = 1;
         }
         setcookie($cookie_name, $cookie_value, time() + 8000, "/");
     }
@@ -75,7 +75,7 @@ session_start();
         if (isset($_COOKIE[$cookie_name])) {
             $cookie_value = $_COOKIE[$cookie_name] + 1;
         } else {
-            $cookie_value = 0;
+            $cookie_value = 1;
         }
         setcookie($cookie_name, $cookie_value, time() + 8000, "/");
     } // These should probably just become one function
