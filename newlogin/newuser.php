@@ -122,19 +122,25 @@ session_start();
             <legend> Create New User </legend>
             <p>
                 <label>Name:</label>
-                <input type="text" id="username" name="Username" />
+                <input type="text" id="username" name="Username" <?php 
+                if (strlen($userError > 3)) {echo ('style="background-color:red;"');}
+                ?>/>
                 <span class="error">* <?php echo $userError;?></span>
                 <br><br>
             </p>
             <p>
                 <label for="email">Enter your email:</label>
-                <input id="email" name="Email">
+                <input id="email" name="Email" <?php 
+                if (strlen($emailError > 3)) {echo ('style="background-color:red;"');}
+                ?>/>
                 <span class="error">* <?php echo $emailError;?></span>
                 <br><br>
             </p>
             <p>
                 <label for="text">Create a Password:</label>
-                <input id="pass" name="Pass">
+                <input id="pass" name="Pass" <?php 
+                if (strlen($passError > 3)) {echo ('style="background-color:red;"');}
+                ?>/>
                 <span class="error">* <?php echo $passError;?></span>
                 <br><br>
             </p>

@@ -103,11 +103,15 @@ session_start();
     <form  method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
             <legend> Login</legend>
-                Username: <input type="text" id="username" name="User"/>
+                Username: <input type="text" id="username" name="User" <?php 
+                if (strlen($userError > 3)) {echo ('style="background-color:red;"');}
+                ?>/>
                 <span class="error">* <?php echo $userError;?></span>
                 <br><br>
             
-                Password: <input type = "text" id="pass" name="Pass">
+                Password: <input type = "text" id="pass" name="Pass" <?php 
+                if (strlen($passError > 3)) {echo ('style="background-color:red;"');}
+                ?>/>
                 <span class="error">* <?php echo $passError;?></span>
                 <br><br>
 
