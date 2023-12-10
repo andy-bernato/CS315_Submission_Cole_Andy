@@ -52,7 +52,6 @@ session_start();
             return $data;
         }
         
-        // navigating through all the rows one at a time
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ((empty($_POST["User"]))) {
                 $isError = true;
