@@ -33,7 +33,7 @@ session_start();
 </div>
 
 
-<div>
+<div id="tablediv">
     <img src="images/Screenshot 2023-11-06 201541.png" style="width:40%">
     <p></p>
 </div>
