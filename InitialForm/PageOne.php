@@ -17,7 +17,7 @@ session_start();
             echo '<a href="../logout/logout.php">Logout</a>';
         }
         ?>
-    <a href="../TableOfContents/TableOfContents.php">Table of Contents</a>
+    <a href="../TableOfContents/TableOfContents.php">Table of Content</a>
 </div>
 
 <body id="formbody">
