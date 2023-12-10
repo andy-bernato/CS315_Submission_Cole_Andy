@@ -110,7 +110,7 @@ session_start();
                     <?php
                     if ($_SESSION["login"] == "true")
                     {
-                        echo 'Price: $18';
+                        echo 'Price: <s>$20</s> $18';
                     } else {
                         echo 'Price: $20';
                     }
@@ -146,11 +146,14 @@ session_start();
                 <?php
                     if ($_SESSION["login"] == "true")
                     {
-                        echo 'Price: $180';
+                        echo 'Price: <s>$200</s> $180';
                     } else {
                         echo 'Price: $200';
                     }
                 ?>
+                <br>
+                Looking for a way to liven up any party? Just try one of our honest to god flashbangs!
+                Guaranteed to make any party that much more exciting, or your money back.
             </p>
             <form method="post">
                 <input type="submit" name="flashButton"
@@ -174,11 +177,12 @@ session_start();
                 <?php
                     if ($_SESSION["login"] == "true")
                     {
-                        echo 'Price: $15';
+                        echo 'Price: <s>$18</s> $15';
                     } else {
                         echo 'Price: $18';
                     }
                 ?>
+                <br>
                 Ever wonder why we made our assignments in the "Previous Assignments" page the way we did? Wonder no more!
                 These videos will make sure you know exactly why we did the things we did! Perfect Christmas gift for any child.
             </p>
@@ -204,11 +208,12 @@ session_start();
                 <?php
                     if ($_SESSION["login"] == "true")
                     {
-                        echo 'Price: $8';
+                        echo 'Price: <s>$10</s> $8';
                     } else {
                         echo 'Price: $10';
                     }
                 ?>
+                <br>
                 An mp4 of the inspired, passionate esoteric rap from the namesake page, complete with a foreword
                 from the man who rapped it. A must-have for any rap enthusiast.
             </p>
