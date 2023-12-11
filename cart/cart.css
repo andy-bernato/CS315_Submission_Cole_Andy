@@ -21,6 +21,13 @@
   color:white;
 }
 
+#cartp a {
+  color:lightblue;
+}
+#cartp a:visited {
+  color:lightblue;
+}
+
 table, th, td {
   border: 3px solid lightblue;
   color:white;
