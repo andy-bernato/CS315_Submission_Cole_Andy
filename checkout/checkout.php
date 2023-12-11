@@ -55,13 +55,13 @@ session_start();
             if ((empty($_POST["Cardnum"]))|| strlen($_POST["Cardnum"]) > 16 || strlen($_POST["Cardnum"]) < 16) {
                 $isError = true;
                 $cardError = "Card Info Required";
-            } else if (!filter_var(($_POST["Cardnum"]), FILTER_VALIDATE_INT)) {
+            } else if (!is_numeric($_POST["Cardnum"])) {
                 $cardError = "Invalid Card Number";
             }
             if ((empty($_POST["Security"])) || strlen($_POST["Security"]) > 3|| strlen($_POST["Security"]) < 3) {
                 $isError = true;
                 $secError = "Valid Security Code Required";
-            } else if (!filter_var(($_POST["Security"]), FILTER_VALIDATE_INT)) {
+            } else if (!is_numeric($_POST["Security"])) {
                 $secError = "Invalid Security Number";
             }
             if ((empty($_POST["Add"]))) {
@@ -75,7 +75,7 @@ session_start();
             if ((empty($_POST["Zip"])) || strlen($_POST["Zip"]) > 5|| strlen($_POST["Zip"]) < 5) {
                 $isError = true;
                 $zipError = "Valid Zipcode Required";
-            } else if (!filter_var(($_POST["Zip"]), FILTER_VALIDATE_INT)) {
+            } else if (!is_numeric($_POST["Zip"])) {
                 $zipError = "Invalid Zipcode";
             }
             if (!($isError)) {
@@ -84,18 +84,57 @@ session_start();
                 $add = clean_new_input($_POST["Add"]);
                 $st = clean_new_input($_POST["State"]);
                 $zip = clean_new_input($_POST["Zip"]);
-                if (!isset($_SESSION["login"]) || $_SESSION["login" == "false"]) {
+                if (!isset($_SESSION["login"]) || $_SESSION["login"] == "false") {
                     $storeUser = "guest";
                 }
                 else {
                     $storeUser = $_SESSION["login"];
                 }
+                
+
+                $items = "";
+                if (isset($_COOKIE["PlateCookie"]))
+                {
+                    $items .= "Plates: " . $_COOKIE["PlateCookie"];
+                }
+                if (isset($_COOKIE["FlashCookie"]))
+                {
+                    $items .= " Flashbangs: " . $_COOKIE["FlashCookie"];
+                }
+                if (isset($_COOKIE["VideoCookie"]))
+                {
+                    $items .= " Videos: " . $_COOKIE["VideoCookie"];
+                }
+                if (isset($_COOKIE["RapCookie"]))
+                {
+                    $items .= " Raps: " . $_COOKIE["RapCookie"];
+                }
 
                 $sql = "INSERT INTO orders (user, card, security_num, items, address, state, zip) VALUES(?,?,?,?,?,?,?)"; 
                 $result = $pdo->prepare($sql); //prep query to insert vals
-                $result->execute([$newuname, $newupass, $newuemail]);
-                    
+                $result->execute([$storeUser, $card, $sec, $items, $add, $st, $zip]);   
                     echo "Thank you for your purchase $uname!";
+                }
+
+                if (isset($_COOKIE["PlateCookie"]))
+                {
+                    $cookie_name = "PlateCookie";
+                    setcookie($cookie_name, 0, time() - 8000, "/");
+                }
+                if (isset($_COOKIE["FlashCookie"]))
+                {
+                    $cookie_name = "FlashCookie";
+                    setcookie($cookie_name, 0, time() - 8000, "/");
+                }
+                if (isset($_COOKIE["VideoCookie"]))
+                {
+                    $cookie_name = "VideoCookie";
+                    setcookie($cookie_name, 0, time() - 8000, "/");
+                }
+                if (isset($_COOKIE["RapCookie"]))
+                {
+                    $cookie_name = "RapCookie";
+                    setcookie($cookie_name, 0, time() - 8000, "/");
                 }
 
             }
@@ -105,7 +144,7 @@ session_start();
         die($e->getMessage());
         }
 ?>
-<form  method="post" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form  method="post" name = "validate" onsubmit=returnToHome() action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
             <legend> Please input your payment information </legend>
             <p>
@@ -202,4 +241,9 @@ session_start();
 
             <input type="submit" name = "submit" value = "Submit"/>
         </fieldset>
+        <script>
+            function returnToHome() {
+                window.location.href="../InitialForm/PageOne";
+            }
+        </script>
     </form>   
