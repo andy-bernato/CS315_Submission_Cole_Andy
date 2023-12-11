@@ -8,14 +8,16 @@ session_start();
 <div id="topnav">
     <a href="../InitialForm/PageOne.php">Home</a>
     <a href="../storePage/store.php">Store</a>
-    <a href="../returninguserlogin/returninglogin.php">Login</a>
     <?php
         if ($_SESSION["login"] == "true")
         {
             echo '<a href="../logout/logout.php">Logout</a>';
+        } else {
+            echo '<a href="../returninguserlogin/returninglogin.php">Login</a>';
         }
         ?>
 </div>
+<br>
 
 <head>
     <?php
@@ -29,10 +31,11 @@ session_start();
         echo $_SESSION["uname"] . " is currently logged in.";
     };
     ?>
+    <br>
     <link rel="stylesheet" href="professor.css" media="only screen and (min-width:770px)">
     <link rel="stylesheet" href="professorsmall.css" media="onlyscreen and (max-width:769px)">
-    This entire template is stolen from my last project. Stuff will be basically the same but with different text. This is because
-    the fanpage was perfect the first time, so why change the format?
+    <p style="color:white">This entire template is stolen from my last project. Stuff will be basically the same but with different text. This is because
+    the fanpage was perfect the first time, so why change the format?</p>
     <nav>
         <a href="../InitialForm/PageOne.html">These all go to the same place now</a> |
         <a href="../InitialForm/PageOne.html">That place is back to the inital form page (so you can see more epic sites)</a> |

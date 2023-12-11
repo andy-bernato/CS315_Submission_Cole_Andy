@@ -8,7 +8,6 @@ table, th, td {
 #topnav {
     overflow:hidden;
     background-color: pink;
-    max-width:14.5%; /* This will need to be adjusted based on what we add */
 }
 
 #topnav a {
@@ -28,4 +27,8 @@ table, th, td {
 #topnav a.active {
     background-color: #04AA6D;
     color: white;
+}
+
+#tablebody {
+    background-color: pink;
 }

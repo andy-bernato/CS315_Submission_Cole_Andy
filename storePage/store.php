@@ -9,12 +9,13 @@ session_start();
     <div id="storenav">
         <a class="active" href="store.php">Store</a>
         <a href="../InitialForm/PageOne.php">Home</a>
-        <a href="../returninguserlogin/returninglogin.php">Login</a>
         <a class="cart" href="../cart/cart.php">Cart</a>
         <?php
         if ($_SESSION["login"] == "true")
         {
             echo '<a href="../logout/logout.php">Logout</a>';
+        } else {
+            echo'<a href="../returninguserlogin/returninglogin.php">Login</a>';
         }
         ?>
     </div>
@@ -79,8 +80,8 @@ session_start();
         }
         setcookie($cookie_name, $cookie_value, time() + 8000, "/");
     } // These should probably just become one function
-
 ?>
+<br><br>
 <body id="storeBody">
     <?php
     if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")
@@ -93,9 +94,9 @@ session_start();
         echo $_SESSION["uname"] . " is currently logged in.";
     };
     ?>
-    <br>
-    <h1 style = "text-align: center;">Welcome to our store!</h1>
-    <p>
+    <br><br><br>
+    <h1 id="storeheader">Welcome to our store!</h1>
+    <p id="storeheader">
         We have several delightful wares we're sure you'd be interested in. Prices are as listed, though
         negotiations for specific non-physical items are possible. Please do not hesitate to contact us with 
         any questions!
@@ -106,13 +107,13 @@ session_start();
                 <h>Table alignment commemorative plate</h>
                 <br><br>
                 <img src="storeimages/alignmentplate.png" width="20%">
-                <p>
+                <p id="storep">
                     <?php
                     if ($_SESSION["login"] == "true")
                     {
-                        echo 'Price: <s>$20</s> $18';
+                        echo '<b>Price: <s>$20</s> $18</b>';
                     } else {
-                        echo 'Price: $20';
+                        echo '<b>Price: $20</b>';
                     }
                     ?>
                     <br>
@@ -142,13 +143,13 @@ session_start();
                 </div>
             </p>
             <img src="storeimages/an_actual_flashbang.jpg" width="20%">
-            <p>
+            <p id="storep">
                 <?php
                     if ($_SESSION["login"] == "true")
                     {
-                        echo 'Price: <s>$200</s> $180';
+                        echo '<b>Price: <s>$200</s> $180</b>';
                     } else {
-                        echo 'Price: $200';
+                        echo '<b>Price: $200</b>';
                     }
                 ?>
                 <br>
@@ -169,17 +170,16 @@ session_start();
             </p>
         </div>
         <div class="grid-item">
-            <p>
-                <h>Inside Insight Videos From Us</h>
-            </p>
+            <h>Inside Insight Videos From Us</h>
+            <br><br>
             <img src="storeimages/cole_andy.JPG" width="40%">
-            <p>
+            <p id="storep">
                 <?php
                     if ($_SESSION["login"] == "true")
                     {
-                        echo 'Price: <s>$18</s> $15';
+                        echo '<b>Price: <s>$18</s> $15</b>';
                     } else {
-                        echo 'Price: $18';
+                        echo '<b>Price: $18</b>';
                     }
                 ?>
                 <br>
@@ -206,13 +206,13 @@ session_start();
             <h>Foreword from DJ Esoteric Rappuh</h>
             <br><br>
             <img src="storeimages/toddshadows.jpg" width="30%">
-            <p>
+            <p id="storep">
                 <?php
                     if ($_SESSION["login"] == "true")
                     {
-                        echo 'Price: <s>$10</s> $8';
+                        echo '<b>Price: <s>$10</s> $8</b>';
                     } else {
-                        echo 'Price: $10';
+                        echo '<b>Price: $10</b>';
                     }
                 ?>
                 <br>

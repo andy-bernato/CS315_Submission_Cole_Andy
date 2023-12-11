@@ -26,7 +26,7 @@ session_start();
         echo $_SESSION["uname"] . " is currently logged in.";
     };
 ?>
-
+<body id="body"></body>
 <?php
     $connstring = "mysql:host=localhost;port=8889;dbname=ip_projects;";
     $user = "root";

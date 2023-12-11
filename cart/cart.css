@@ -16,3 +16,14 @@
     background-color: #04AA6D;
     color: white;
 }
+
+#cartp {
+  color:white;
+}
+
+table, th, td {
+  border: 3px solid lightblue;
+  color:white;
+  border-collapse: collapse;
+
+}

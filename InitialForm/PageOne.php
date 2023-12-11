@@ -10,16 +10,17 @@ session_start();
 <div id="topnav">
     <a class="active" href="PageOne.php">Home</a>
     <a href="../storePage/store.php">Store</a>
-    <a href="../returninguserlogin/returninglogin.php">Login</a>
+    <a href="../TableOfContents/TableOfContents.php">Table of Contents</a>
     <?php
         if ($_SESSION["login"] == "true")
         {
             echo '<a href="../logout/logout.php">Logout</a>';
+        } else {
+            echo '<a href="../returninguserlogin/returninglogin.php">Login</a>';
         }
         ?>
-    <a href="../TableOfContents/TableOfContents.php">Table of Content</a>
 </div>
-
+<br><br>
 <body id="formbody">
     <?php
     if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")

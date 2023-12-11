@@ -9,17 +9,18 @@ session_start();
     <div id="cartnav">
         <a href="../storePage/store.php">Store</a>
         <a href="../InitialForm/PageOne.php">Home</a>
-        <a href="../returninguserlogin/returninglogin.php">Login</a>
         <a class="active" href="cart.php">Cart</a>
         <?php
         if ($_SESSION["login"] == "true")
         {
             echo '<a href="../logout/logout.php">Logout</a>';
+        } else {
+            echo '<a href="../returninguserlogin/returninglogin.php">Login</a>';
         }
         ?>
     </div>
 </head>
-<br><br><br>
+<br>
 <br>
 <?php
 if(isset($_POST['removePlate'])) {
@@ -43,17 +44,20 @@ if(isset($_POST['removeRap'])) {
     setcookie($cookie_name, 0, time() - 8000, "/");
 } ?>
 <head>
+    <p id="cartp">
     Welcome to the cart! Here, you can see what you've ordered and proceed to checkout!
     <br>
     If you would like to remove an item, click the remove button twice. This is to prevent 
     accidental cart removals, and save you time!
+    </p>
 </head>
-<table>
+<body style="background-color: black;"></body>
+<table id="tablefun">
     <tr>
         <th>Item</th>
         <th>Quantity</th>
         <th>Price</th>
-        <th>Remove?<th>
+        <th>Remove?</th>
     </tr>
     <?php
         $isItem = false; 
@@ -70,10 +74,10 @@ if(isset($_POST['removeRap'])) {
             }
             $ptotalprice = $price * $pquantity;
             echo ("<tr>
-                    <th>$item</th>
-                    <th>$pquantity</th>
-                    <th>$ptotalprice</th>
-                    <th><form method=\"post\">
+                    <td>$item</td>
+                    <td>$pquantity</td>
+                    <td>$ptotalprice</td>
+                    <td><form method=\"post\">
                     <input type=\"submit\" name=\"removePlate\"
                     class=\"button\" value=\"Remove\"/>
                 </form>
@@ -92,14 +96,14 @@ if(isset($_POST['removeRap'])) {
             }
             $ftotalprice = $price * $fquantity;
             echo ("<tr>
-                    <th>$item</th>
-                    <th>$fquantity</th>
-                    <th>$ftotalprice</th>
-                    <th><form method=\"post\">
+                    <td>$item</td>
+                    <td>$fquantity</td>
+                    <td>$ftotalprice</td>
+                    <td><form method=\"post\">
                     <input type=\"submit\" name=\"removeFlash\"
                     class=\"button\" value=\"Remove\"/>
                 </form>
-                </th>
+                </td>
                 </tr>");
         } 
         if (isset($_COOKIE["VideoCookie"])) {
@@ -115,14 +119,14 @@ if(isset($_POST['removeRap'])) {
             }
             $vtotalprice = $price * $vquantity;
             echo ("<tr>
-                    <th>$item</th>
-                    <th>$vquantity</th>
-                    <th>$vtotalprice</th>
-                    <th><form method=\"post\">
+                    <td>$item</td>
+                    <td>$vquantity</td>
+                    <td>$vtotalprice</td>
+                    <td><form method=\"post\">
                     <input type=\"submit\" name=\"removeVideo\"
                     class=\"button\" value=\"Remove\"/>
                 </form>
-                </th>
+                </td>
                 </tr>");
         } 
         if (isset($_COOKIE["RapCookie"])) {
@@ -138,14 +142,14 @@ if(isset($_POST['removeRap'])) {
             }
             $rtotalprice = $price * $rquantity;
             echo ("<tr>
-                    <th>$item</th>
-                    <th>$rquantity</th>
-                    <th>$rtotalprice</th>
-                    <th><form method=\"post\">
+                    <td>$item</td>
+                    <td>$rquantity</td>
+                    <td>$rtotalprice</td>
+                    <td><form method=\"post\">
                     <input type=\"submit\" name=\"removeRap\"
                     class=\"button\" value=\"Remove\"/>
                 </form>
-                </th>
+                </td>
                 </tr>");
         }
         if ($isItem) {
@@ -155,23 +159,32 @@ if(isset($_POST['removeRap'])) {
             $total = $subtotal + $tax;
             
             echo ("<tr>
-                    <th>Subtotal</th>
-                    <th></th>
-                    <th>$subtotal</th>
-                    <th></th>
+                    <td>Subtotal</td>
+                    <td></td>
+                    <td>$subtotal</td>
+                    <td></td>
                   </tr>
                   <tr>
-                    <th>Tax<th>
-                    <th>$tax</th>
-                    <th></th>
+                    <td>Tax</td>
+                    <td></td>
+                    <td>$tax</td>
+                    <td></td>
                   </tr>
                   <tr>
-                    <th>Total<th>
-                    <th>$total</th>
-                    <th></th>
+                    <td>Total</td>
+                    <td></td>
+                    <td>$total</td>
+                    <td></td>
                   </tr>");
                     
         }
     ?>
 
 </table>
+<?php
+if ($isItem) {
+    echo ("<p id=\"cartp\">
+    Satisfied? <a href=\"../checkout/checkout.php\">Proceed to Checkout</a>
+    </p>");
+}
+?>
