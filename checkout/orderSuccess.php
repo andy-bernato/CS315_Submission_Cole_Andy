@@ -13,7 +13,7 @@ session_start();
         }
     ?>
 </div>
-<link rel="stylesheet" href="checkout.css" media="only screen and (min-width:770px)">
+<link rel="stylesheet" href="orderSuccess.css" media="only screen and (min-width:770px)">
 <body id="formbody">
 <?php
     if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")
@@ -112,7 +112,9 @@ session_start();
                 $sql = "INSERT INTO orders (user, card, security_num, items, address, state, zip) VALUES(?,?,?,?,?,?,?)"; 
                 $result = $pdo->prepare($sql); //prep query to insert vals
                 $result->execute([$storeUser, $card, $sec, $items, $add, $st, $zip]);   
-                    echo "Thank you for your purchase $uname!";
+                    echo '<div id="message">';
+                    echo "Thank you for your purchase $storeuser!";
+                    echo '</div>'
                 }
 
                 if (isset($_COOKIE["PlateCookie"]))

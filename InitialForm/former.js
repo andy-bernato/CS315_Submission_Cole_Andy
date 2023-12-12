@@ -56,3 +56,33 @@ function validateForm() {
         return false;
     }
 };
+
+function checkFields() {
+    let idField = document.getElementById("nameID");
+    if (idField.value == "")
+    {
+        idField.style.backgroundColor = "red";
+    }
+    else
+    {
+        idField.style.backgroundColor = "white";
+    }
+    let plane = document.getElementById("firstemail");
+    if (plane.value == "")
+    {
+        plane.style.backgroundColor = "red";
+    }
+    else
+    {
+        plane.style.backgroundColor = "white";
+    }
+    let grade = document.getElementById("gradeID");
+    if (grade.value == "Select a Grade")
+    {
+        grade.style.backgroundColor = "red";
+    }
+    else
+    {
+        grade.style.backgroundColor = "white";
+    }
+}
