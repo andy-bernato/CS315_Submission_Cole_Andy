@@ -43,3 +43,27 @@ function validateForm() {
         return false;
     }
 };
+
+function checkFields() {
+    let alertString="";
+    let idField = document.getElementById("nameID");
+    if (idField.value == "")
+    {
+        alertString += "Please input a name.\n";
+    }
+    let plane = document.getElementById("firstemail");
+    if (plane.value == "")
+    {
+        alertString += "Please input a plane of existence.\n";
+    }
+    let grade = document.getElementById("gradeID");
+    if (grade.value == "Select a Grade")
+    {
+        alertString += "Please select a grade.\n"
+    }
+    
+    if (alertString != "")
+    {
+        alert(alertString);
+    }
+}

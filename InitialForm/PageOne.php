@@ -66,7 +66,6 @@ session_start();
             </p>
             <input type="submit"/>
         </fieldset>
-        Your data will appear here
     </form>
     <button type="button" id="randomPage" onclick=randomPage()>
         Go to a WACKY random website

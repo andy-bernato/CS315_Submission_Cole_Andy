@@ -58,31 +58,25 @@ function validateForm() {
 };
 
 function checkFields() {
+    let alertString="";
     let idField = document.getElementById("nameID");
     if (idField.value == "")
     {
-        idField.style.backgroundColor = "red";
-    }
-    else
-    {
-        idField.style.backgroundColor = "white";
+        alertString += "Please input a name.\n";
     }
     let plane = document.getElementById("firstemail");
     if (plane.value == "")
     {
-        plane.style.backgroundColor = "red";
-    }
-    else
-    {
-        plane.style.backgroundColor = "white";
+        alertString += "Please input a plane of existence.\n";
     }
     let grade = document.getElementById("gradeID");
     if (grade.value == "Select a Grade")
     {
-        grade.style.backgroundColor = "red";
+        alertString += "Please select a grade.\n"
     }
-    else
+    
+    if (alertString != "")
     {
-        grade.style.backgroundColor = "white";
+        alert(alertString);
     }
 }

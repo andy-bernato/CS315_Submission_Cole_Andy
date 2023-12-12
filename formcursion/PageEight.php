@@ -33,7 +33,7 @@ session_start();
         echo $_SESSION["uname"] . " is currently logged in.";
     };
     ?>
-    <form method="post" id="jsonInput" name = "validate" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form method="post" id="jsonInput" name = "validate" onsubmit = "checkFields()">
         <fieldset>
             <legend> Totally Secure user data input </legend>
             <p>
