@@ -1,7 +1,7 @@
 #topnav {
     overflow:hidden;
     background-color: black;
-    max-width:25%; /* This will need to be adjusted based on what we add */
+    display: inline-block; /* This will need to be adjusted based on what we add */
 }
 
 #topnav a {
