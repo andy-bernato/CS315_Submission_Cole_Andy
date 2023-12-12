@@ -81,7 +81,7 @@ session_start();
         setcookie($cookie_name, $cookie_value, time() + 8000, "/");
     } // These should probably just become one function
 ?>
-<br><br>
+<br><br><br>
 <body id="storeBody">
     <?php
     if (!isset($_SESSION["login"])|| $_SESSION["login"] == "false")
