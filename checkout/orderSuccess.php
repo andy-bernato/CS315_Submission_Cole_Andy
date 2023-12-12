@@ -114,7 +114,7 @@ session_start();
                 $result->execute([$storeUser, $card, $sec, $items, $add, $st, $zip]);   
                     echo '<div id="message">';
                     echo "Thank you for your purchase $storeuser!";
-                    echo '</div>'
+                    echo '</div>';
                 }
 
                 if (isset($_COOKIE["PlateCookie"]))
