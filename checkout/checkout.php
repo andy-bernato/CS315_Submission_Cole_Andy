@@ -177,7 +177,7 @@ session_start();
             } else if (!is_numeric($_POST["Zip"])) {
                 $zipError = "Invalid Zipcode";
             }
-            if (!($isError)) {
+            if (($isError)) {
                 $card = clean_new_input($_POST["Cardnum"]);
                 $sec = clean_new_input($_POST["Security"]);
                 $add = clean_new_input($_POST["Add"]);
